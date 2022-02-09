@@ -1,0 +1,22 @@
+#number-input-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#number-input-container span {
+	border-bottom: 2px solid #333;
+	margin: auto 10px;
+}
+
+#btn-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#btn-container button {
+	box-sizing: border-box;
+	margin: 5px;
+	width: 90px;
+}

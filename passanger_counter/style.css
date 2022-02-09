@@ -1,0 +1,47 @@
+h1,
+h2 {
+	text-align: center;
+}
+
+h1 {
+	font-size: 2.5em;
+}
+h2 {
+	font-size: 4em;
+}
+
+body {
+	background-image: url("./bg.jpg");
+}
+
+#buttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+button {
+	display: block;
+	text-align: center;
+	border: 1px solid black;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin: 10px;
+	width: 200px;
+	color: white;
+	font-weight: bold;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+#increment-btn {
+	background-color: green;
+}
+
+#decrement-btn {
+	background-color: darkred;
+}
+
+#save-btn {
+	background-color: darkblue;
+}
