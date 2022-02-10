@@ -17,6 +17,7 @@ function renderLeads() {
 	// it saves all the pages in listItems, and finally it assigns the ulEl innerHTML to be equal to that
 	let listItems = "";
 	for (let i = 0; i < myLeads.length; i++) {
+		// this is a template string, it allows easier HTML formatting in my js code
 		listItems += `
 		<li>
 			<a target='_blank' href='${myLeads[i]}'>
