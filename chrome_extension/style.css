@@ -14,13 +14,23 @@ input {
 }
 
 button {
-	display: block;
+	display: inline-block;
 	margin-top: 5px;
 	background-color: #66a343;
 	color: white;
 	font-weight: bold;
 	border: 0;
 	padding: 10px 30px;
+}
+
+#save-input-btn {
+	border: 1px solid #5f9341;
+}
+
+#delete-btn {
+	background-color: white;
+	color: green;
+	border: 1px solid green;
 }
 
 ul {

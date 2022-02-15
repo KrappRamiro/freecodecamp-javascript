@@ -1,9 +1,27 @@
 let myLeads = [];
+
 let inputEl = document.getElementById("input-el");
 let saveInputBtn = document.getElementById("save-input-btn");
+let deleteBtn = document.getElementById("delete-btn");
 const ulEl = document.getElementById("ul-el");
 
+/* -------------- START OF LOADING PREVIOUSLY STORED DATA -------------- */
+//get leads from localStorage and stores it in myLeads
+const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
+console.log("leads from local storage: ", leadsFromLocalStorage);
+
+//renders the retrieved leads
+if (leadsFromLocalStorage) {
+	//if its not null
+	myLeads = leadsFromLocalStorage;
+	renderLeads();
+}
+
+/* -------------- END OF LOADING PREVIOUSLY STORED DATA ---------------- */
+
 function renderLeads() {
+	//log out the variable
+
 	//one way, inneficient because manipulating the DOM comes with a cost
 	if (false) {
 		ulEl.textContent = "";
@@ -30,9 +48,19 @@ function renderLeads() {
 }
 
 saveInputBtn.addEventListener("click", function () {
-	console.log("Button clicked!");
-	myLeads.push(inputEl.value);
-	inputEl.value = "";
-	console.log(myLeads);
+	myLeads.push(inputEl.value); //add the input to the myLeads array
+	console.log("saved the lead: ", inputEl.value); //log the saved lead
+	inputEl.value = ""; //clear the input
+
+	// saving myLeads[] to local storage
+	localStorage.setItem("myLeads", JSON.stringify(myLeads));
+
+	renderLeads(); //renders the stored leads
+});
+
+deleteBtn.addEventListener("dblclick", function () {
+	console.log("Deleting the stored leads");
+	myLeads = [];
+	localStorage.clear();
 	renderLeads();
 });
